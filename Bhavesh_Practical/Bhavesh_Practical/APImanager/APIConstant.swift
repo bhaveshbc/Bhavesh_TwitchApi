@@ -41,6 +41,6 @@ enum HTTPHeaderField: String {
 
 /// enum for base URl constant
 enum APIBaseUrl: String {
-    case development = "http://short.weblook.xyz/api/"
-    case distribution = "http://short.weblook.xyz/distribution/api/"
+    case development = "https://id.twitch.tv/"
+    case distribution = "https://id.twitch.tv/Live/"
 }

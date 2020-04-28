@@ -8,17 +8,17 @@
 
 import UIKit
 @available(iOS 13.0, *)
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, RootViewControllerProvider {
 
     var window: UIWindow?
+    var coordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         AppDelegate.standard?.window = window
-        if let windowScene = scene as? UIWindowScene {
+       if let windowScene = scene as? UIWindowScene {
             self.window = UIWindow(windowScene: windowScene)
-
-            self.window!.makeKeyAndVisible()
+            setupRootViewController(with: window!)
         }
         }
 

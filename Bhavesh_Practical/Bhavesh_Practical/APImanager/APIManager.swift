@@ -51,7 +51,7 @@ class APImanager {
             }
 
             let str = String(decoding: data, as: UTF8.self)
-//            print("response data = \(str)")
+            print("response data = \(str)")
 
             if let error = error {
                 completion(.failure(APIError.responseError(message: error.localizedDescription)))
