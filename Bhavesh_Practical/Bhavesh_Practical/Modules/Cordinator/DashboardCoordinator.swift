@@ -15,7 +15,7 @@ class DashboardCoordinator: Coordinator {
 
     init() {
         let dashboardNavigation = UINavigationController()
-        dashboardNavigation.navigationBar.isHidden = true
+//        dashboardNavigation.navigationBar.isHidden = true
         self.navigationController = dashboardNavigation
     }
 
@@ -25,6 +25,13 @@ class DashboardCoordinator: Coordinator {
         dashboardController.coordinator = self
         navigationController.setViewControllers([dashboardController], animated: false)
         UIApplication.shared.keyWindow?.rootViewController = navigationController
+    }
+
+    func presentVideoPlayerController(with videos: [String], selectedIndex: Int) {
+        let videoPlayerController = VideoPlayerViewController.instantiate(fromAppStoryboard: .main)
+        videoPlayerController.videosArray = videos
+        videoPlayerController.nextVideoIndex = selectedIndex
+        self.navigationController.pushViewController(videoPlayerController, animated: true)
     }
 
 }

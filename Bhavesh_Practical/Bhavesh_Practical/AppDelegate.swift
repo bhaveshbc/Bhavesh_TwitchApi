@@ -36,8 +36,6 @@ protocol RootViewControllerProvider: class {
 
 extension RootViewControllerProvider {
     func setupRootViewController( with window: UIWindow) {
-        let dashBoardNavigation = UINavigationController()
-        dashBoardNavigation.navigationBar.isHidden = true
         coordinator = DashboardCoordinator()
         coordinator?.start()
         window.rootViewController = coordinator?.navigationController

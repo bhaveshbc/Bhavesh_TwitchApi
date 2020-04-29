@@ -11,7 +11,6 @@ import Foundation
 final class Cache<Key: Hashable, Value> {
 
     private let wrapped = NSCache<WrappedKey, Entry>()
-    
     func insert(_ value: Value, forKey key: Key) {
         let entry = Entry(value: value)
         wrapped.setObject(entry, forKey: WrappedKey(key))
@@ -70,4 +69,3 @@ extension Cache {
         }
     }
 }
-

@@ -55,6 +55,11 @@ class DashboardViewController: UIViewController {
     // construct dataSource for DashBoard collectionView
     private func prepareDataSource(with videos: [VideoViewModel]) {
         self.dashBoardDataSource = DashBoardDataSource(collectionView: self.dashboardCollectionView, array: videos)
+            guard let dataSource = self.dashBoardDataSource else { return }
+            let videosId = viewModel.getVideoIds()
+            dataSource.collectionItemSelectionHandler = { [unowned self] indexPath in
+                self.coordinator?.presentVideoPlayerController(with: videosId, selectedIndex: indexPath.item)
+            }
     }
 
     private func saveUserDetail(user: UserModel) {

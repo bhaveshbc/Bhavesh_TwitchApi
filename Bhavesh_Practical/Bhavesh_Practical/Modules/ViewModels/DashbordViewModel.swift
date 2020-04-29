@@ -8,9 +8,20 @@
 
 import Foundation
 
-class DashBoardViewModel {
+protocol DashBoardViewModelProtocol {
+    func getUserToken(with request: UserRequest, then handler: @escaping ResponseType<UserModel>)
+    func getVideos(by userId: Int, then handler: @escaping ResponseType<[VideoViewModel]>)
+    func viewModel(at index: Int) -> VideoViewModel?
+    func getVideoIds() -> [String]
+}
+
+class DashBoardViewModel: DashBoardViewModelProtocol {
 
     var modelList: [VideoViewModel] = []
+
+    var modelListCount: Int {
+        return modelList.count
+    }
 
     func getUserToken(with request: UserRequest, then handler: @escaping ResponseType<UserModel>) {
         let router = TwitchRouter.getUserAuthToken(parameter: request)
@@ -53,8 +64,8 @@ class DashBoardViewModel {
            return modelList[index]
     }
 
-    var modelListCount: Int {
-        return modelList.count
+    func getVideoIds() -> [String] {
+        return modelList.map { $0.videoId}
     }
 
 }
