@@ -42,6 +42,7 @@
 		7C7850862459AA0F00B75FD1 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */; };
 		7C7850882459B11800B75FD1 /* DashBoardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */; };
 		7C8478382459DE58005F7998 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8478372459DE58005F7998 /* ShadowView.swift */; };
+		7C84783B2459E574005F7998 /* Payload.ipa in Resources */ = {isa = PBXBuildFile; fileRef = 7C84783A2459E573005F7998 /* Payload.ipa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardDataSource.swift; sourceTree = "<group>"; };
 		7C8478372459DE58005F7998 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		7C84783A2459E573005F7998 /* Payload.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = Payload.ipa; sourceTree = "<group>"; };
 		7CD7FFF52459417B007D2373 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 		7C48CF6F24580BDA004A88F9 /* Bhavesh_Practical */ = {
 			isa = PBXGroup;
 			children = (
+				7C8478392459E573005F7998 /* app-folder */,
 				7C48CF95245853CB004A88F9 /* Utils */,
 				7C48CF8824580C2A004A88F9 /* APImanager */,
 				7C48CF8424580BF7004A88F9 /* Modules */,
@@ -269,6 +272,14 @@
 			path = GenricDataSource;
 			sourceTree = "<group>";
 		};
+		7C8478392459E573005F7998 /* app-folder */ = {
+			isa = PBXGroup;
+			children = (
+				7C84783A2459E573005F7998 /* Payload.ipa */,
+			);
+			path = "app-folder";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +343,7 @@
 				7C48CF7D24580BE3004A88F9 /* LaunchScreen.storyboard in Resources */,
 				7C48CF7A24580BE3004A88F9 /* Assets.xcassets in Resources */,
 				7C48CF9A2458559D004A88F9 /* Main.storyboard in Resources */,
+				7C84783B2459E574005F7998 /* Payload.ipa in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
