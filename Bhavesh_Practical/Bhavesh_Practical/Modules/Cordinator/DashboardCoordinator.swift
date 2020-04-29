@@ -15,7 +15,7 @@ class DashboardCoordinator: Coordinator {
 
     init() {
         let dashboardNavigation = UINavigationController()
-//        dashboardNavigation.navigationBar.isHidden = true
+//        dashboardNavigation.navigationItem.title = "Twitch Demo"
         self.navigationController = dashboardNavigation
     }
 

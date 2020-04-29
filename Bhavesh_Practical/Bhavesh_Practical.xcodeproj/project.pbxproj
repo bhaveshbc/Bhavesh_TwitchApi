@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		167EF2AF812EB32AAFDCA9CB /* Pods_Bhavesh_Practical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C75124C219D69073C57F2A /* Pods_Bhavesh_Practical.framework */; };
 		7C48CF7124580BDA004A88F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48CF7024580BDA004A88F9 /* AppDelegate.swift */; };
 		7C48CF7324580BDA004A88F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48CF7224580BDA004A88F9 /* SceneDelegate.swift */; };
 		7C48CF7524580BDA004A88F9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48CF7424580BDA004A88F9 /* DashboardViewController.swift */; };
@@ -39,11 +38,12 @@
 		7C48CFC2245888D2004A88F9 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48CFC1245888D2004A88F9 /* VideoViewModel.swift */; };
 		7C48CFC424589B19004A88F9 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48CFC324589B19004A88F9 /* Cache.swift */; };
 		7C48CFC62458B9E7004A88F9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48CFC52458B9E7004A88F9 /* VideoPlayerViewController.swift */; };
-		7CD7FFF62459417B007D2373 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD7FFF52459417B007D2373 /* WebKit.framework */; };
+		7C78508424599E4100B75FD1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD7FFF52459417B007D2373 /* WebKit.framework */; };
+		7C7850862459AA0F00B75FD1 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */; };
+		7C7850882459B11800B75FD1 /* DashBoardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3586AC7FD6F0DEA9E14E7D39 /* Pods-Bhavesh_Practical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhavesh_Practical.debug.xcconfig"; path = "Target Support Files/Pods-Bhavesh_Practical/Pods-Bhavesh_Practical.debug.xcconfig"; sourceTree = "<group>"; };
 		78C75124C219D69073C57F2A /* Pods_Bhavesh_Practical.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bhavesh_Practical.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C48CF6D24580BDA004A88F9 /* Bhavesh_Practical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bhavesh_Practical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C48CF7024580BDA004A88F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +78,9 @@
 		7C48CFC1245888D2004A88F9 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		7C48CFC324589B19004A88F9 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		7C48CFC52458B9E7004A88F9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardDataSource.swift; sourceTree = "<group>"; };
 		7CD7FFF52459417B007D2373 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		DAADDA1E125CA634DCDDFC22 /* Pods-Bhavesh_Practical.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhavesh_Practical.release.xcconfig"; path = "Target Support Files/Pods-Bhavesh_Practical/Pods-Bhavesh_Practical.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CD7FFF62459417B007D2373 /* WebKit.framework in Frameworks */,
-				167EF2AF812EB32AAFDCA9CB /* Pods_Bhavesh_Practical.framework in Frameworks */,
+				7C78508424599E4100B75FD1 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,6 @@
 				7C48CF8A24580F0C004A88F9 /* .swiftlint.yml */,
 				7C48CF6F24580BDA004A88F9 /* Bhavesh_Practical */,
 				7C48CF6E24580BDA004A88F9 /* Products */,
-				D33875F32CB0A55980A7B2BD /* Pods */,
 				1ED9A4DA974EBF41AAD6881A /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 			children = (
 				7C48CF7424580BDA004A88F9 /* DashboardViewController.swift */,
 				7C48CFC52458B9E7004A88F9 /* VideoPlayerViewController.swift */,
+				7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +248,7 @@
 			children = (
 				7C48CFA524585E29004A88F9 /* DashbordViewModel.swift */,
 				7C48CFC1245888D2004A88F9 /* VideoViewModel.swift */,
+				7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -265,15 +266,6 @@
 			path = GenricDataSource;
 			sourceTree = "<group>";
 		};
-		D33875F32CB0A55980A7B2BD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3586AC7FD6F0DEA9E14E7D39 /* Pods-Bhavesh_Practical.debug.xcconfig */,
-				DAADDA1E125CA634DCDDFC22 /* Pods-Bhavesh_Practical.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,12 +273,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C48CF8124580BE3004A88F9 /* Build configuration list for PBXNativeTarget "Bhavesh_Practical" */;
 			buildPhases = (
-				7F03288B2132AC563F2785D0 /* [CP] Check Pods Manifest.lock */,
 				7C48CF6924580BDA004A88F9 /* Sources */,
 				7C48CF6A24580BDA004A88F9 /* Frameworks */,
 				7C48CF6B24580BDA004A88F9 /* Resources */,
 				7C48CF8924580DFE004A88F9 /* ShellScript */,
-				7D9C00354926560E63FFDCE4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -362,45 +352,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		7D9C00354926560E63FFDCE4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bhavesh_Practical/Pods-Bhavesh_Practical-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bhavesh_Practical/Pods-Bhavesh_Practical-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bhavesh_Practical/Pods-Bhavesh_Practical-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F03288B2132AC563F2785D0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Bhavesh_Practical-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -409,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C48CFAD24586C03004A88F9 /* Coordinator.swift in Sources */,
+				7C7850882459B11800B75FD1 /* DashBoardDataSource.swift in Sources */,
 				7C48CFBF2458820B004A88F9 /* CellRegistration.swift in Sources */,
 				7C48CF7524580BDA004A88F9 /* DashboardViewController.swift in Sources */,
 				7C48CFC62458B9E7004A88F9 /* VideoPlayerViewController.swift in Sources */,
@@ -429,6 +381,7 @@
 				7C48CFBB2458820B004A88F9 /* CollectionDataSource.swift in Sources */,
 				7C48CF94245812E2004A88F9 /* APIManager.swift in Sources */,
 				7C48CFC2245888D2004A88F9 /* VideoViewModel.swift in Sources */,
+				7C7850862459AA0F00B75FD1 /* VideoPlayerViewModel.swift in Sources */,
 				7C48CFC02458820B004A88F9 /* ConfigurableCell.swift in Sources */,
 				7C48CFA624585E29004A88F9 /* DashbordViewModel.swift in Sources */,
 				7C48CFA224585963004A88F9 /* VideoList.swift in Sources */,
@@ -568,7 +521,6 @@
 		};
 		7C48CF8224580BE3004A88F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3586AC7FD6F0DEA9E14E7D39 /* Pods-Bhavesh_Practical.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,7 +540,6 @@
 		};
 		7C48CF8324580BE3004A88F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAADDA1E125CA634DCDDFC22 /* Pods-Bhavesh_Practical.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

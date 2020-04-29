@@ -12,44 +12,65 @@ class DashboardViewController: UIViewController {
 
     @IBOutlet var dashboardCollectionView: UICollectionView!
 
-    let viewModel = DashBoardViewModel()
+    // MARK: - Variable Declaration
+    private let viewModel = DashBoardViewModel()
     weak var coordinator: DashboardCoordinator?
-    var dashBoardDataSource: DashBoardDataSource?
-    var userId = 60056333
+    private var dashBoardDataSource: DashBoardDataSource?
+    private var userId = 60056333
+    private var activityView = UIActivityIndicatorView(style: .gray)
 
+    // MARK: - Controller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "DashBoard"
         // Do any additional setup after loading the view.
 
         let tokenRequest = UserRequest(clientId: TwitchConstant.clientID.rawValue, clientSecret: TwitchConstant.clientSecrete.rawValue)
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
+        activityView.isHidden = false
+        activityView.startAnimating()
         getUserAccessToken(with: tokenRequest)
     }
 
-    private func getUserAccessToken(with request: UserRequest) {
-        viewModel.getUserToken(with: request) { [unowned self] response in
-            switch response {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.saveUserDetail(user: model)
-                    self.getVideoBy(userId: self.userId)
-                }
-            case .failure(let apiError):
-                self.showError(message: apiError.errorDescriptions)
-            }
-        }
-    }
+     // MARK: - API Handler
 
-    private func getVideoBy(userId: Int) {
-        viewModel.getVideos(by: userId) { [unowned self] response in
-            switch response {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.prepareDataSource(with: model)
-                }
-            case .failure(let apiError):
-                self.showError(message: apiError.errorDescriptions)
-            }
-        }
+    /// function responsible for retrieve access token from Twitch. this access token will be used for next API calls.
+    /// - Parameter request: UserRequest instance
+    private func getUserAccessToken(with request: UserRequest) {
+           viewModel.getUserToken(with: request) { [unowned self] response in
+               switch response {
+               case .success(let model):
+                   DispatchQueue.main.async {
+                       self.saveUserDetail(user: model)
+                       self.getVideoBy(userId: self.userId)
+                   }
+               case .failure(let apiError):
+                   self.showError(message: apiError.errorDescriptions)
+               }
+           }
+       }
+
+    /// function responsible for Fetch videos by userId from Server(Twitch Api)
+    /// - Parameter userId: user id instance
+       private func getVideoBy(userId: Int) {
+           viewModel.getVideos(by: userId) { [unowned self] response in
+               switch response {
+               case .success(let model):
+                   DispatchQueue.main.async {
+                       self.stopActivityIndicator()
+                       self.prepareDataSource(with: model)
+                   }
+               case .failure(let apiError):
+                   self.showError(message: apiError.errorDescriptions)
+               }
+           }
+       }
+
+    // MARK: - Custom methods
+    private func stopActivityIndicator() {
+        activityView.stopAnimating()
+        activityView.isHidden = true
     }
 
     // construct dataSource for DashBoard collectionView
@@ -62,6 +83,8 @@ class DashboardViewController: UIViewController {
             }
     }
 
+    /// function responsible for save user details like user access token etc.
+    /// - Parameter user: UserModel Instance
     private func saveUserDetail(user: UserModel) {
         do {
             try viewModel.saveLoggedUserToUserDefault(user: user)
@@ -70,16 +93,12 @@ class DashboardViewController: UIViewController {
         }
     }
 
+    /// Show given error string on Alert ViewController
+    /// - Parameter message: Error message
     private func showError(message: String) {
         DispatchQueue.main.async {
+            self.stopActivityIndicator()
             self.presentAlertMessage(message: message)
         }
-    }
-}
-
-class DashBoardDataSource: CollectionArrayDataSource<VideoViewModel, DashBoardCollectionViewCell>, UICollectionViewDelegateFlowLayout {
-
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 120)
     }
 }

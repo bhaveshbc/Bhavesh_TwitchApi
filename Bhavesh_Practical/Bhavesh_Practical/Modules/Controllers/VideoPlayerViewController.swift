@@ -7,27 +7,43 @@
 //
 
 import UIKit
-import TwitchPlayer
+import WebKit
 
 class VideoPlayerViewController: UIViewController {
 
-    @IBOutlet weak var twitchPlayer: TwitchPlayer!
+    @IBOutlet weak var twitchPlayerOuterView: UIView!
+    
+    // MARK: - Variable Declaration
     var nextVideoIndex = 0
     var videosArray = [String]()
+    private let viewModel = VideoPlayerViewModel()
+    private var twitchPlayer: WKWebView!
 
+     // MARK: - Controller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+        twitchPlayer = WKWebView(frame: twitchPlayerOuterView.bounds, configuration: configuration)
+        twitchPlayerOuterView.addSubview(twitchPlayer)
         guard nextVideoIndex < videosArray.count else { return }
-        twitchPlayer.setVideo(to: videosArray[nextVideoIndex], timestamp: 0)
+        playVideo(videoId: self.videosArray[self.nextVideoIndex])
     }
 
-    @IBAction func togglePlaybackPress(_ sender: Any) {
-        twitchPlayer.togglePlaybackState()
+    // MARK: - Custom methods
+
+    /// function responsible construct HTML for video Player with given VideoID
+    /// - Parameter videoId: VideoID
+    private func playVideo(videoId: String) {
+        let videoHtml = viewModel.getHtmlFor(videoId: videoId)
+        twitchPlayer.loadHTMLString(videoHtml, baseURL: nil)
     }
 
+    /// Play next Video from videosArray
+    /// - Parameter sender: UIButton Instance
     @IBAction func nextButtonPress(_ sender: Any) {
         let videoToPlay = videosArray[nextVideoIndex]
         nextVideoIndex = (nextVideoIndex + 1) % videosArray.count
-        twitchPlayer.setVideo(to: videoToPlay, timestamp: 0)
+        playVideo(videoId: videoToPlay)
     }
 }
