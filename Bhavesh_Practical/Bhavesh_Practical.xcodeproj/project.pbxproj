@@ -41,6 +41,7 @@
 		7C78508424599E4100B75FD1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD7FFF52459417B007D2373 /* WebKit.framework */; };
 		7C7850862459AA0F00B75FD1 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */; };
 		7C7850882459B11800B75FD1 /* DashBoardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */; };
+		7C8478382459DE58005F7998 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8478372459DE58005F7998 /* ShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		7C48CFC52458B9E7004A88F9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		7C7850852459AA0F00B75FD1 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		7C7850872459B11800B75FD1 /* DashBoardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardDataSource.swift; sourceTree = "<group>"; };
+		7C8478372459DE58005F7998 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		7CD7FFF52459417B007D2373 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 				7C48CFA724586168004A88F9 /* APPExtension.swift */,
 				7C48CFA92458619F004A88F9 /* AppEnum.swift */,
 				7C48CFC324589B19004A88F9 /* Cache.swift */,
+				7C8478372459DE58005F7998 /* ShadowView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				7C48CFC2245888D2004A88F9 /* VideoViewModel.swift in Sources */,
 				7C7850862459AA0F00B75FD1 /* VideoPlayerViewModel.swift in Sources */,
 				7C48CFC02458820B004A88F9 /* ConfigurableCell.swift in Sources */,
+				7C8478382459DE58005F7998 /* ShadowView.swift in Sources */,
 				7C48CFA624585E29004A88F9 /* DashbordViewModel.swift in Sources */,
 				7C48CFA224585963004A88F9 /* VideoList.swift in Sources */,
 				7C48CFAA2458619F004A88F9 /* AppEnum.swift in Sources */,

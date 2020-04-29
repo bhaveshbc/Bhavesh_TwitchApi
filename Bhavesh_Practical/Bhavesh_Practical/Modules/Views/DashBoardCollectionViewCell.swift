@@ -19,6 +19,7 @@ class DashBoardCollectionViewCell: UICollectionViewCell, ConfigurableCell {
         userName.text = item.userName
         viewsCount.text = item.viewCounts
         videoTitle.text = item.videoTitle
+        videoImage.image = nil
         item.downloadThumb(with: (200, 120)) { [unowned self] data in
             if let imageData = data, let thumbImage = UIImage(data: imageData) {
                 DispatchQueue.main.async {

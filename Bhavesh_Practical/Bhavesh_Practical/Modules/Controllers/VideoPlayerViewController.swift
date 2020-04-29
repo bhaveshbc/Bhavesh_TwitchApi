@@ -12,7 +12,6 @@ import WebKit
 class VideoPlayerViewController: UIViewController {
 
     @IBOutlet weak var twitchPlayerOuterView: UIView!
-    
     // MARK: - Variable Declaration
     var nextVideoIndex = 0
     var videosArray = [String]()
@@ -22,10 +21,16 @@ class VideoPlayerViewController: UIViewController {
      // MARK: - Controller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.setupWebView()
+        }
+    }
+
+    private func setupWebView() {
         let configuration = WKWebViewConfiguration()
-        configuration.allowsInlineMediaPlayback = true
-        twitchPlayer = WKWebView(frame: twitchPlayerOuterView.bounds, configuration: configuration)
-        twitchPlayerOuterView.addSubview(twitchPlayer)
+               configuration.allowsInlineMediaPlayback = true
+        twitchPlayer = WKWebView(frame: self.twitchPlayerOuterView.bounds, configuration: configuration)
+        self.twitchPlayerOuterView.addSubview(self.twitchPlayer)
         guard nextVideoIndex < videosArray.count else { return }
         playVideo(videoId: self.videosArray[self.nextVideoIndex])
     }
