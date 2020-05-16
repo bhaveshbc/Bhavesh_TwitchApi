@@ -1,4 +1,4 @@
-# Bhavesh_Practical
+# Bhavesh_TwitchApi
 
 
 ## Any Dependancy
