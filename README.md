@@ -21,8 +21,7 @@ There are no any dependancy. this Apps not depend on any third party library lik
 
 
 
-### skype: bhavesh.chaudhari2015
-### WhatsApp: +91 7487867036
+
 
 
 
